@@ -1,0 +1,25 @@
+.oneDayWidget {
+    height: 400px;
+    width: 400px;
+    background-color: black;
+    margin: 20px;
+    border-radius: 10%;
+}
+
+.topContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    justify-content: space-evenly;
+    height: 700px;
+    width: 1200px;
+    margin-bottom: 30px;
+}
+
+.addFoodCard {
+    height: 400px;
+    width: 400px;
+    background-color: black;
+    margin: 20px;
+    border-radius: 10%;
+}

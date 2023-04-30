@@ -5,7 +5,9 @@ import NutritionList from "./NutritionList";
 import AddFoodCard from "./AddFoodCard";
 import CaloriesForOneDayWidget from '../../Global Components/CaloriesForOneDayWidget.js'
 import {Donut} from "../../Global Components/Donut";
-import "../../Global Components/Chart-Page.css"
+//import "../../Global Components/Chart-Page.css"
+import "./Nutrition.css"
+
 
 
 function getTodaysDate(date){
@@ -40,10 +42,14 @@ export default function Nutrition() {
             });
     }
     return <div>
-        <Donut email={currentUser.email} day={"2023-04-29T04:00:00.000Z"}/>
+        {/*<Donut email={currentUser.email} day={"2023-04-29T04:00:00.000Z"}/>*/}
         {/*<Donut email={currentUser.email} day={getTodaysDate(new Date())}/>*/}
-        <AddFoodCard />
-        <CaloriesForOneDayWidget />
+        <div className="topContainer">
+
+
+        <CaloriesForOneDayWidget className="oneDayWidget" />
+        <AddFoodCard className="addFoodCard"/>
+        </div>
         {foods && <NutritionList foods={foods} />}
     </div>;
 }
