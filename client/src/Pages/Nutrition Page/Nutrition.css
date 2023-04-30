@@ -1,3 +1,8 @@
+.NutritionPageBody {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
 .oneDayWidget {
     height: 400px;
     width: 400px;
@@ -22,4 +27,12 @@
     background-color: black;
     margin: 20px;
     border-radius: 10%;
+}
+
+.NutritionListContainer {
+    display: flex;
+    background-color: #00B7FF;
+    flex-direction: column;
+    column-gap: 20px;
+    align-items: stretch;
 }

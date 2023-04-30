@@ -41,15 +41,17 @@ export default function Nutrition() {
                 setFoods("error");
             });
     }
-    return <div>
+    return <div className="NutritionPageBody">
         {/*<Donut email={currentUser.email} day={"2023-04-29T04:00:00.000Z"}/>*/}
         {/*<Donut email={currentUser.email} day={getTodaysDate(new Date())}/>*/}
         <div className="topContainer">
-
-
-        <CaloriesForOneDayWidget className="oneDayWidget" />
-        <AddFoodCard className="addFoodCard"/>
+            <CaloriesForOneDayWidget className="oneDayWidget" />
+             <AddFoodCard className="addFoodCard"/>
         </div>
-        {foods && <NutritionList foods={foods} />}
+
+        <div className="NutritionListContainer">
+            {foods && <NutritionList foods={foods} />}
+        </div>
+
     </div>;
 }
