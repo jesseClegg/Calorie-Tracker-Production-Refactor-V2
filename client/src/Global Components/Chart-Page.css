@@ -1,0 +1,24 @@
+/* .chartPage{
+    background-color: bisque;
+    height: 100rem;
+    width: 100rem;
+} */
+
+.donutContainer {
+    background-color:rgb(241, 231, 231);
+    height: 500px;
+    width: 500px;
+    border-radius: 10%;
+}
+
+.lineContainer{
+    background-color:rgb(241, 231, 231);
+    height: 450px;
+    width: 450px;
+    border-radius: 10%;
+}
+
+.h1 {
+    font-size: large;
+    color: aliceblue;
+}

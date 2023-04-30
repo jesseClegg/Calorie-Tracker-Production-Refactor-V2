@@ -1,0 +1,11 @@
+.Donut {
+    height: 500px;
+    width: 500px;
+    background-color: black;
+    border-radius: 10%;
+}
+
+.oneDayWidget {
+    background-color: blueviolet;
+    margin: 20px;
+}
