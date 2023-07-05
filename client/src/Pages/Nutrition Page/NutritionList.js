@@ -13,6 +13,7 @@ import {useAuth} from "../../user-auth/contexts/AuthContexts";
 
 const NutritionList=(props)=>{
     const foods=props.foods;
+    const [notModified, setNotModified] = useState(true);
     const [totalCalories, setTotalCalories] = useState(0);
     const [servings, setServings] = useState('');
     const [servingsTextField, setServingsTextField] = useState('');
@@ -41,10 +42,12 @@ const NutritionList=(props)=>{
                 }
             },
         });
+        props.modifyList();
     }
 
     function DeleteFood(food){
-        console.log("attempting to delete: "+food);
+        setNotModified(false);
+        // console.log("attempting to delete: "+food);
         axios
             .delete('http://localhost:3000/api/deleteFood', {
                 data: {
@@ -58,13 +61,13 @@ const NutritionList=(props)=>{
 
                 console.error('There was an error!', error);
             });
+            props.modifyList();
     }
 
     return (
-        <div>
+
+        <div >
             {foods.map((foods) => (
-
-
                 <Card sx={{ display: 'flex' }}>
                     <CardMedia
                         component="img"
@@ -86,8 +89,7 @@ const NutritionList=(props)=>{
                                 <Grid item xs={6}>
                                     <Button onClick={() => {
                                         DeleteFood(foods.name);
-                                    }}
-                                    >
+                                    }}>
                                         Delete
                                     </Button>
                                     <Button
@@ -110,11 +112,6 @@ const NutritionList=(props)=>{
                         </Container>
                     </CardContent>
                 </Card>
-
-
-
-
-
             ))}
         </div>
     );

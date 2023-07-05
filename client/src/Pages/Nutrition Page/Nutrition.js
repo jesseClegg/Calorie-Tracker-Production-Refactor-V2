@@ -21,9 +21,18 @@ function getTodaysDate(date){
 export default function Nutrition() {
     const { currentUser } = useAuth();
     const [foods, setFoods] = useState(null);
+    const [wasModified, setWasModified] = useState(false);
+
+    function modifyList() {
+        setWasModified(true);
+        // console.log("setting was modified to: "+wasModified);
+    }
+
     useEffect(() => {
+        console.log("inside useEffect, wasModified is: "+wasModified);
         getMeals(currentUser.email);
-    }, [])//empty dependency array fires on first render only
+        setWasModified(false);
+    }, [wasModified])
 
     function getMeals(userEmail) {
         axios
@@ -45,12 +54,12 @@ export default function Nutrition() {
         {/*<Donut email={currentUser.email} day={"2023-04-29T04:00:00.000Z"}/>*/}
         {/*<Donut email={currentUser.email} day={getTodaysDate(new Date())}/>*/}
         <div className="topContainer">
-            <CaloriesForOneDayWidget className="oneDayWidget" />
+            {/*<CaloriesForOneDayWidget className="oneDayWidget" />*/}
              <AddFoodCard className="addFoodCard"/>
         </div>
 
         <div className="NutritionListContainer">
-            {foods && <NutritionList foods={foods} />}
+            {foods && <NutritionList foods={foods}  modifyList = {modifyList}/>}
         </div>
 
     </div>;

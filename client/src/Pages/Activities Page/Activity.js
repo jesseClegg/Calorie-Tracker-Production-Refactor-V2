@@ -34,7 +34,7 @@ export default function Activities() {
   return (
       <div>
           <AddActivityCard />
-          <CaloriesForOneDayWidget />
+          {/*<CaloriesForOneDayWidget />*/}
       {activities && <ActivityList activities={activities} />}
       </div>
   )

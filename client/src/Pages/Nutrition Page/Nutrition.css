@@ -14,10 +14,10 @@
 .topContainer {
     display: flex;
     flex-direction: row;
-    background-color: red;
+    /*background-color: red;*/
     justify-content: space-evenly;
-    height: 700px;
-    width: 1200px;
+    height: 500px;
+    width: 800px;
     margin-bottom: 30px;
 }
 
